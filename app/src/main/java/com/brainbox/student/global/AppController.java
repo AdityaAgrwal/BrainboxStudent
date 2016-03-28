@@ -18,6 +18,7 @@ public class AppController extends Application {
 
     public static final String TAG = AppController.class.getSimpleName();
     private static Context mContext;
+    public static final String JSON_OBJECT_REQUEST = "json_obj_req";
 
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
