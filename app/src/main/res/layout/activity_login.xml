@@ -1,0 +1,103 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:gravity="center_horizontal"
+			  android:orientation="vertical">
+
+	<include
+		android:id="@+id/toolbar"
+		layout="@layout/toolbar"/>
+
+	<ScrollView
+		android:id="@+id/login_form"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<com.brainbox.student.ui.edittext.CustomEditText
+				android:id="@+id/etUserName"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="15dip"
+				android:layout_marginRight="15dip"
+				android:layout_marginTop="40dip"
+				android:background="@drawable/abc_alpha_et_background"
+				android:drawablePadding="15dp"
+				android:hint="@string/username"
+				android:inputType="textCapWords"
+				android:padding="10dp"
+				android:singleLine="true"
+				android:textColor="@color/black"
+				android:textColorHint="#DDAAAAAA"
+				android:textCursorDrawable="@drawable/color_cursor"
+				android:textSize="16sp"/>
+
+
+			<com.brainbox.student.ui.edittext.CustomEditText
+				android:id="@+id/etPassword"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginBottom="10dp"
+				android:layout_marginLeft="15dp"
+				android:layout_marginRight="15dp"
+				android:layout_marginTop="10dp"
+				android:background="@drawable/abc_alpha_et_background"
+				android:drawablePadding="15dp"
+				android:hint="@string/password"
+				android:inputType="textPassword"
+				android:padding="10dp"
+				android:singleLine="true"
+				android:textColor="@color/black"
+				android:textColorHint="#DDAAAAAA"
+				android:textCursorDrawable="@drawable/color_cursor"
+				android:textSize="16sp"/>
+
+
+			<TextView
+				android:id="@+id/txtForgotPassword"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="end"
+				android:layout_marginRight="25dp"
+				android:layout_marginTop="15dip"
+				android:clickable="true"
+				android:padding="5dip"
+				android:text="@string/forgot_password"
+				android:textColor="@color/forgot_password"/>
+
+			<com.brainbox.student.ui.button.ButtonPlus
+				android:id="@+id/btnLogin"
+				style="@style/button"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="25dp"
+				android:layout_marginRight="25dp"
+				android:layout_marginTop="16dp"
+				android:background="@drawable/abc_alpha_btn_background"
+				android:padding="10dp"
+				android:text="@string/btn_login"
+				android:textAllCaps="false"
+				android:textColor="@color/white"
+				android:textSize="18sp"/>
+
+			<TextView
+				android:id="@+id/txtSearchSchool"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_marginTop="15dip"
+				android:clickable="true"
+				android:padding="5dip"
+				android:text="@string/search_school"
+				android:textAppearance="@android:style/TextAppearance.Medium"
+				android:textColor="@color/forgot_password"/>
+		</LinearLayout>
+	</ScrollView>
+
+</LinearLayout>
+

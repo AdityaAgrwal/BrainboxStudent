@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<FrameLayout android:id="@+id/frameMap"
+				 android:layout_width="match_parent"
+				 android:layout_height="match_parent">
+		<fragment
+			android:id="@+id/map"
+			android:name="com.google.android.gms.maps.MapFragment"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"/>
+	</FrameLayout>
+
+	<TextView
+		android:id="@+id/txtNoPlayServices"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:text="@string/common_google_play_services_notification_ticker"
+		android:textSize="20sp"
+		android:visibility="gone"/>
+	<TextView
+		android:id="@+id/txtNoPlayServicesDisc"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/txtNoPlayServices"
+		android:layout_centerInParent="true"
+		android:layout_marginLeft="25dp"
+		android:layout_marginRight="25dp"
+		android:layout_marginTop="20dp"
+		android:alpha="0.7"
+		android:gravity="center"
+		android:text="@string/common_google_play_services_install_text_phone"
+		android:textSize="16sp"
+		android:visibility="gone"/>
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<fr.ganfra.materialspinner.MaterialSpinner
+		android:id="@+id/spinnerFeedbackSubject"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:layout_marginRight="20dp"
+		android:layout_marginTop="25dp"
+		app:ms_alignLabels="false"
+		app:ms_arrowColor="@color/primary"
+		app:ms_arrowSize="16dp"
+		app:ms_baseColor="@color/primary"
+		app:ms_enableFloatingLabel="true"
+		app:ms_errorColor="@color/red"
+		app:ms_floatingLabelColor="@color/primary"
+		app:ms_floatingLabelText="@string/reason"
+		app:ms_highlightColor="@color/primary"
+		app:ms_hint="@string/subject"
+		app:ms_hintColor="@color/primary_dark"
+		app:ms_multiline="false"
+		app:ms_thickness="1dp"/>
+
+	<com.brainbox.student.ui.edittext.CustomEditText
+		android:id="@+id/etFeedback"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="20dp"
+		android:layout_marginRight="20dp"
+		android:layout_marginTop="25dp"
+		android:alpha="0.7"
+		android:background="@drawable/bg_absent_note_edittext"
+		android:gravity="top"
+		android:hint="@string/et_feedback_hint"
+		android:maxLines="10"
+		android:minLines="8"
+		android:padding="10dp"
+		android:singleLine="false"/>
+
+	<com.brainbox.student.ui.button.ButtonPlus
+		android:id="@+id/btnSubmitFeedback"
+		android:layout_marginLeft="25dp"
+		android:layout_marginRight="25dp"
+		android:textColor="@color/white"
+		android:layout_marginTop="20dp"
+		android:textAllCaps="false"
+		android:textSize="18sp"
+		android:background="@drawable/abc_alpha_btn_background"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:text="@string/submit"/>
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/dashboard"
+            android:checked="false"
+            android:icon="@mipmap/ub__home_icon"
+            android:title="@string/news_feed" />
+        <item
+            android:id="@+id/myProfile"
+            android:icon="@mipmap/abc_dr_menu_name_mtrl_am_alpha"
+            android:title="@string/myprofile" />
+    </group>
+
+    <item android:title="Academics">
+        <menu>
+            <item
+                android:id="@+id/calender"
+                android:icon="@mipmap/abc_dr_menu_name_mtrl_am_alpha"
+                android:title="@string/calender" />
+
+            <item
+                android:id="@+id/feesPayment"
+                android:icon="@mipmap/abc_dr_menu_name_mtrl_am_alpha"
+                android:title="@string/fees_payment" />
+
+            <item
+                android:id="@+id/absentNote"
+                android:icon="@mipmap/abc_dr_menu_name_mtrl_am_alpha"
+                android:title="@string/absent_note" />
+
+            <item
+                android:id="@+id/groups"
+                android:icon="@drawable/ic_delete_black"
+                android:title="@string/groups" />
+
+            <item
+                android:id="@+id/events"
+                android:icon="@drawable/ic_delete_black"
+                android:title="@string/events" />
+
+        </menu>
+    </item>
+
+    <item android:title="Others">
+        <menu>
+
+            <item
+                android:id="@+id/lost_n_found"
+                android:icon="@drawable/ic_delete_black"
+                android:title="@string/lost_n_found" />
+
+            <item
+                android:id="@+id/feedback"
+                android:icon="@drawable/ic_delete_black"
+                android:title="@string/feedback" />
+
+            <item
+                android:id="@+id/maps"
+                android:icon="@drawable/ic_delete_black"
+                android:title="@string/maps" />
+        </menu>
+    </item>
+
+
+    <item android:title="Settings">
+        <menu>
+            <item
+                android:id="@+id/settings"
+                android:icon="@drawable/ic_delete_black"
+                android:title="@string/action_settings" />
+            <item
+                android:id="@+id/policies"
+                android:icon="@drawable/ic_delete_black"
+                android:title="@string/policies" />
+        </menu>
+    </item>
+</menu>

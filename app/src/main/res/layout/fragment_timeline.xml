@@ -1,0 +1,24 @@
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<com.nirhart.parallaxscroll.views.ParallaxListView
+		android:id="@+id/listTimeline"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:paddingBottom="50dp"
+		android:visibility="gone"
+		app:parallax_factor="1.9"
+		tools:context=".MainActivity"/>
+
+	<include android:id="@+id/loadingView"
+			 layout="@layout/loading_view"/>
+
+	<include android:id="@+id/emptyView"
+			 layout="@layout/empty_data_view"/>
+
+	<include android:id="@+id/errorView"
+			 layout="@layout/error_view"/>
+</RelativeLayout>
