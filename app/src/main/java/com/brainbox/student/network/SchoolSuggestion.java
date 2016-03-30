@@ -60,6 +60,7 @@ public class SchoolSuggestion implements NetworkContants{
                     simpleCursorAdapter.changeCursor(cursor);
                 } catch (Exception e) {
                     success = false;
+                    e.printStackTrace();
                     SnackBar.showSimple(context, e.toString());
                 }
             }
@@ -69,6 +70,7 @@ public class SchoolSuggestion implements NetworkContants{
             public void onErrorResponse(VolleyError error) {
                 if (error instanceof TimeoutError || error instanceof NoConnectionError || error instanceof NetworkError) {
                     success = false;
+                    error.printStackTrace();
                     SnackBar.showSimple(context, error.toString());
                     return;
                 }

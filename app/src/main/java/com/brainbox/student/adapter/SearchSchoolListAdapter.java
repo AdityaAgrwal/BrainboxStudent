@@ -32,6 +32,7 @@ import com.brainbox.student.R;
 import com.brainbox.student.activities.SchoolDetailsActivity;
 import com.brainbox.student.dto.FeedItem;
 import com.brainbox.student.dto.SchoolListItemDTO;
+import com.brainbox.student.dto.SearchSchoolDTO;
 import com.brainbox.student.global.AppController;
 import com.brainbox.student.ui.CustomTypeFace;
 import com.brainbox.student.ui.volley.FeedImageView;
@@ -46,13 +47,13 @@ public class SearchSchoolListAdapter extends BaseAdapter
 {
 	private Context context;
 	private LayoutInflater inflater;
-	private List<SchoolListItemDTO> schoolItems;
+	private List<SearchSchoolDTO> schoolItems;
 	private Typeface typeface, boldTypeface;
 	private int width = 0;
 	private ViewHolder holder;
 	private Picasso picasso;
 
-	public SearchSchoolListAdapter(Context context, List<SchoolListItemDTO> schoolItems)
+	public SearchSchoolListAdapter(Context context, List<SearchSchoolDTO> schoolItems)
 	{
 		this.context = context;
 		this.schoolItems = schoolItems;
@@ -88,47 +89,38 @@ public class SearchSchoolListAdapter extends BaseAdapter
 
 		if (inflater == null)
 			inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		if (convertView == null)
-		{
-			convertView = inflater.inflate(R.layout.single_row_search_schools, null);
-			holder = new ViewHolder();
-			holder.txtSchoolName = (TextView) convertView.findViewById(R.id.txtSchoolName);
-			holder.txtSchoolAddress = (TextView) convertView.findViewById(R.id.txtSchoolAddress);
-			holder.imgSchool = (ImageView) convertView.findViewById(R.id.imgSchool);
-			convertView.setTag(holder);
+		View view = inflater.inflate(R.layout.single_row_search_schools, null);
+		//holder. = new ViewHolder();
+		TextView txtSchoolName = (TextView) view.findViewById(R.id.txtSchoolName);
+		TextView txtSchoolAddress = (TextView) view.findViewById(R.id.txtSchoolAddress);
+		final ImageView imgSchool = (ImageView) view.findViewById(R.id.imgSchool);
+//		convertView.setTag(holder);
 
-		}else{
-			holder = (ViewHolder) convertView.getTag();
+		final SearchSchoolDTO item = schoolItems.get(position);
+
+		imgSchool.getLayoutParams().height = width / 2;
+		imgSchool.getLayoutParams().width = width;
+		imgSchool.setScaleType(ImageView.ScaleType.FIT_XY);
+
+		 imgSchool.requestLayout();
+		 txtSchoolName.setTypeface(boldTypeface);
+		 txtSchoolAddress.setTypeface(typeface);
+		 txtSchoolName.setText(item.getName());
+		 txtSchoolAddress.setText(item.getAddress());
+		 if(item.getImageLink() != null) {
+			picasso.load(item.getImageLink()).error(R.drawable.ic_launcher).into(imgSchool, new Callback() {
+				@Override
+				public void onSuccess() {
+					 imgSchool.requestLayout();
+				}
+
+				@Override
+				public void onError() {
+
+				}
+			});
 		}
-
-
-		final SchoolListItemDTO item = schoolItems.get(position);
-
-		holder.imgSchool.getLayoutParams().height = width / 2;
-		holder.imgSchool.getLayoutParams().width = width;
-		holder.imgSchool.setScaleType(ImageView.ScaleType.FIT_XY);
-
-		holder.imgSchool.requestLayout();
-		holder.txtSchoolName.setTypeface(boldTypeface);
-		holder.txtSchoolAddress.setTypeface(typeface);
-		holder.txtSchoolName.setText(item.getName());
-		holder.txtSchoolAddress.setText(item.getAddress());
-		picasso.load(item.getImage()).error(R.drawable.ic_launcher).into(holder.imgSchool, new Callback()
-		{
-			@Override
-			public void onSuccess()
-			{
-				holder.imgSchool.requestLayout();
-			}
-
-			@Override
-			public void onError()
-			{
-
-			}
-		});
-
-		convertView.setOnClickListener(new View.OnClickListener()
+		view.setOnClickListener(new View.OnClickListener()
 		{
 			@Override
 			public void onClick(View v)
@@ -140,7 +132,7 @@ public class SearchSchoolListAdapter extends BaseAdapter
 				context.startActivity(intent);
 			}
 		});
-		return convertView;
+		return view;
 	}
 
 	class ViewHolder

@@ -163,6 +163,7 @@ public class TimelineFragment extends Fragment
 			handleException();
 		}
 	}
+
 	private void handleException()
 	{
 		if(timelineItems.size() == 0){
